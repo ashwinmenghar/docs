@@ -1,12 +1,24 @@
 import React from "react";
 import Background from "./components/Background";
 import ForeGround from "./components/ForeGround";
+import { Route, Routes } from "react-router-dom";
+import Create from "./components/Create";
 
 function App() {
   return (
     <div className="relative w-full h-screen bg-zinc-800">
-      <Background />
-      <ForeGround />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Background />
+              <ForeGround />
+            </>
+          }
+        />
+        <Route path="/create" element={<Create />} />
+      </Routes>
     </div>
   );
 }

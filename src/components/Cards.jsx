@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRegFileAlt } from "react-icons/fa";
 import { LuDownload } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
@@ -31,9 +31,7 @@ function Cards({ data, reference }) {
           {data.tag.isOpen && (
             <div
               className={`tag w-full py-4 ${
-                data.tag.tagColor
-                  ? `bg-${data?.tag?.tagColor}-600`
-                  : "bg-green-600"
+                data.tag.tagColor == "blue" ? "bg-blue-600" : "bg-green-600"
               } flex items-center justify-center`}
             >
               <h3 className="text-sm font-semibold">{data.tag.tagTitle}</h3>
